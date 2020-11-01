@@ -1,0 +1,15 @@
+<%- include("Partials/header"); -%>
+
+<h1>Starting Instructions</h1>
+<p><strong>Welcome To Blog Website.Here you can compose and write blogs and posts about your daily lives. You can read a individual blog by clicking Read More.Want to try it out Click on Compose.</strong></p>
+<% for(let i=0;i<posts.length;i++){ %>
+  <h1><%= posts[i].title%></h1>
+ <p><strong><%= posts[i].content.slice(0,100) + ".." %></strong></p>
+  <form action="/delete" method="post">
+    <a href="/posts/<%=posts[i]._id%>">Read More</a>
+    <button type="submit" class="btn btn-primary" name="deletedPost" value = <%= posts[i]._id %> >Delete</button
+  </form>
+<% } %>
+
+
+<%- include("Partials/footer"); -%>
