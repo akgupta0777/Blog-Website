@@ -9,7 +9,7 @@ const ejs = require("ejs");
 const _ = require('lodash');
 
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://admin-Abhay:Superuser07@cluster0.tlojh.mongodb.net/BlogDB?retryWrites=true&w=majority",{useNewUrlParser:true});
+mongoose.connect("mongodb+srv://myauthdetails?retryWrites=true&w=majority",{useNewUrlParser:true});
 const postSchema = {
   title: String,
   content : String
