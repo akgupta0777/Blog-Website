@@ -20,7 +20,7 @@
 }
 
 .footer {
-	position: absolute;
+	/* position: absolute; */
 	text-align: center;
 	bottom: 0;
 	width: 100%;
@@ -29,7 +29,8 @@
 }
 
 .footer p {
-	margin-top: 25px;
+    margin-top: 25px;
+    padding-top: 20px;
 	font-size: 18px;
   color: #fff;
 }

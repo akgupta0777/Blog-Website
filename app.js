@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+require('dotenv').config();
 const express = require("express");
 
 const bodyParser = require("body-parser");
@@ -7,9 +7,10 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 const _ = require('lodash');
+const MONGOURL = process.env.URL;
 
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://myauthdetails?retryWrites=true&w=majority",{useNewUrlParser:true});
+mongoose.connect(MONGOURL,{useNewUrlParser:true,useUnifiedTopology:true});
 const postSchema = {
   title: String,
   content : String
@@ -22,7 +23,7 @@ let homeContent = "Welcome To Blog Website.Here you can compose and write blogs 
 const aboutContent = "I am Abhay Gupta The creator of this awesome Website. I made this website because I want to practice what I learnt in Web Development and Specifically EJS(Embedded JavaScript). This website is made using Node.js Express ,EJS and MongoDB.Thanks For Reading.";
 
 
-const contactContent = "So Do you want to Contact Me \n Email - Akgupta0777@gmail.com \n Phone Number - 9354942524.";
+const contactContent = "So Do you want to Contact Me :- ";
 
 const app = express();
 
@@ -101,5 +102,6 @@ app.post("/delete",function(req,res){
 })
 
   app.listen(process.env.PORT || 3000, function() {
+    console.log(MONGOURL);
     console.log("Connected to Server. You are Connected");
 });
