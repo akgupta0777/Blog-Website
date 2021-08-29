@@ -7,10 +7,10 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
 const _ = require('lodash');
-const MONGOURL = process.env.URL;
+const MONGO_URL = process.env.MONGO_URL;
 
 const mongoose = require('mongoose');
-mongoose.connect(MONGOURL,{useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect(MONGO_URL,{useNewUrlParser:true,useUnifiedTopology:true});
 const postSchema = {
   title: String,
   content : String
@@ -102,6 +102,6 @@ app.post("/delete",function(req,res){
 })
 
   app.listen(process.env.PORT || 3000, function() {
-    console.log(MONGOURL);
+    console.log(MONGO_URL);
     console.log("Connected to Server. You are Connected");
 });
