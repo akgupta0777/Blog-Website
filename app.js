@@ -100,8 +100,7 @@ app.post("/delete",function(req,res){
     }
   })
 })
-
-  app.listen(process.env.PORT || 3000, function() {
-    console.log(MONGO_URL);
-    console.log("Connected to Server. You are Connected");
+  const port = process.env.PORT || 3000;
+  app.listen(port, function() {
+    console.log(`Connected to Server on port ${port}. You are Connected`);
 });
